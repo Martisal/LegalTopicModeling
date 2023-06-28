@@ -21,12 +21,12 @@ corpus = [dictionary.doc2bow(text) for text in tokens]
 tfidf = models.TfidfModel(corpus)
 corpus_tfidf = tfidf[corpus]
 
-pickle.dump(corpus_tfidf, open('all-models/corpus.pickle', 'wb'))
-dictionary.save('all-models/dictionary.gensim')
+pickle.dump(corpus_tfidf, open('models/corpus.pickle', 'wb'))
+dictionary.save('models/dictionary.gensim')
 
 for i in range(3,21):
     ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=i, id2word=dictionary, passes=15)
-    ldamodel.save('all-models/lda_all_{}topic_{}passes.gensim'.format(i,15))
+    ldamodel.save('models/lda_all_{}topic_{}passes_42seed_filnames-50.gensim'.format(i,15))
 
     print('TOPIC MODELLING WITH', i, 'TOPICS, ({} PASSES LDA)'.format(15))
     print()

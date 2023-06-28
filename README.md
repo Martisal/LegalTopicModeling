@@ -16,7 +16,7 @@ cd LegalTopicModeling
 pip3 install -r requirements.txt
 ```
 
-## Preprocessing
+### Preprocessing
 
 To preprocess the dataset, run 
 
@@ -25,19 +25,23 @@ To preprocess the dataset, run
 To perform a test, just run `preprocess.py` without specifying any argument.
 The script processes all the xml files in the data directory by performing all the preprocessing steps described in the paper, and saves the output in the specified directory.
 
-## Topic modeling
+### Topic modeling
 
 To train the LDA models, modify the script `topic_modeling.py` by specifying the directory with the preprocessed data and run it.
 The script trains and saves the models on the corpus from 3 to 20 topics, and also serialises and saves the corpus and the dictionary.
 
-## Remarks
+Other scripts:
+* `coherence.py` computes and print the coherence of the saved models.
+* `explore_topics.py` contains the code to compute the silhouette scores yielded by the topics on the tf-idf vectors (it is commented, since it takes some hours), and to perform the temporal analysis on shifting 5-years windows. Reaults are, by default, saved in the `./results` folder 
+
+### Remarks
 
 All the experiments have been performed on a Linux machine with Ubuntu 20.04 LTS. 
 If you run the code on different operating systems, some requirements should be a bit different. If you are on Windows, paths must be expressed in Windows/DOS format, and backslashes sometimes need to be escaped.
 
-If you find this code useful for your work, please cite us:
+### Citation
 
-## Citation
+If you find this code useful for your work, please cite us:
 
 ```
 @article{legaltm,
