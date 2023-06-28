@@ -1,0 +1,8 @@
+gensim
+pickle
+numpy
+scikit-learn
+pystemmer
+unicodedata
+lxml
+argparse
